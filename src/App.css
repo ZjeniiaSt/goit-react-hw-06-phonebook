@@ -1,0 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css');
+
+* {
+  font-family: 'Open Sans', 'sans-serif', 'FontAwesome';
+}
+
+body {
+  background: rgb(52, 56, 61);
+}
+li {
+  list-style-type: none;
+}
