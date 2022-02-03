@@ -1,19 +1,22 @@
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { getFilter } from '../../redux/phonebook-selectors';
+import { changeFilter } from '../../redux/phonebook-actions';
 import { BsSearch } from 'react-icons/bs';
 import { FilterInput, FilterLabel } from './Filter.styled';
 
-function Filter({ value, onChange }) {
+function Filter() {
+  const value = useSelector(getFilter);
+  const dispatch = useDispatch();
   return (
     <FilterLabel>
       <BsSearch /> Find contacts by name
-      <FilterInput type="text" name="name" value={value} onChange={onChange}></FilterInput>
+      <FilterInput
+        type="text"
+        value={value}
+        onChange={e => dispatch(changeFilter(e.target.value))}
+      ></FilterInput>
     </FilterLabel>
   );
 }
-
-Filter.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-};
 
 export default Filter;

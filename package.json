@@ -5,14 +5,20 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@reduxjs/toolkit": "^1.7.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "modern-normalize": "^1.1.0",
+    "persist": "^0.2.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
+    "react-redux": "^7.2.6",
     "react-scripts": "5.0.0",
+    "redux": "^4.1.2",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "shortid": "^2.2.16",
     "web-vitals": "^2.1.4"
   },
@@ -47,7 +53,8 @@
     "eslint": "^8.8.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.2",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "redux-devtools-extension": "^2.13.9"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
