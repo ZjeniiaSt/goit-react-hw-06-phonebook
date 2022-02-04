@@ -12,18 +12,16 @@ function ContactList() {
 
   return (
     <ContactsRoster>
-      {contacts.map(({ id, name, number }) => {
-        return (
-          <ContactsData key={id}>
-            <span>
-              {name}: <ContactNumber>{number}</ContactNumber>
-            </span>
-            <ContactDelete type="button" onClick={() => onDelete(id)}>
-              <BsTrashFill />
-            </ContactDelete>
-          </ContactsData>
-        );
-      })}
+      {contacts.map(({ id, name, number }) => (
+        <ContactsData key={id}>
+          <span>
+            {name}: <ContactNumber>{number}</ContactNumber>
+          </span>
+          <ContactDelete type="button" onClick={() => onDelete(id)}>
+            <BsTrashFill />
+          </ContactDelete>
+        </ContactsData>
+      ))}
     </ContactsRoster>
   );
 }

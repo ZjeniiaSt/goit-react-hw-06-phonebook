@@ -2,18 +2,25 @@ import { useState } from 'react';
 import { BsPersonCircle } from 'react-icons/bs';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { Form, FormInput, FormLabel, AddButton } from './ContactForm.styled';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from '../../redux/phonebook-actions';
+import { getContacts } from '../../redux/phonebook-selectors';
 
 function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
+  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(addContact({ name, number }));
+
+    contacts.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase() || contact.number === number,
+    )
+      ? alert(`${name} is alredy in contacts`)
+      : dispatch(addContact({ name, number }));
     reset();
   };
 
